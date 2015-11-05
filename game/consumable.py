@@ -1,4 +1,5 @@
-import items, random
+from items import Item
+import random
 
 class Consumable(Item):
     def __init__(self, name, description, value, health):

@@ -1,9 +1,10 @@
-import items, random
+from items import Item
+import random
 
 class Weapon(Item):
     def __init__(self, name, description, value, damage):
         self.damage = damage - (damage * durability)
-        self.durability = random.randint(1, 5))/100
+        self.durability = random.randint(1, 5)/100
         super().__init__(name, description, value)
 
     def __str__(self):

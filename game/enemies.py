@@ -12,14 +12,14 @@ class Enemy:
     def is_alive(self):
         return self.hp > 0
     def is_gf(self):
-        if self.gf
+        if self.gf:
             return "Gluten Free"
-        else
+        else:
             return null
     def is_sf(self):
-        if self.sf
+        if self.sf:
             return "Sugar Free"
-        else
+        else:
             return null
 
 class CrinkleCookie(Enemy):

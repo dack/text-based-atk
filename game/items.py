@@ -1,6 +1,6 @@
 class Item():
         #base item class
-        def __init__(slef, name, description, value):
+        def __init__(self, name, description, value):
             self.name = name
             self.description = description
             self.value = value

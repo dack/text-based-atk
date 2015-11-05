@@ -1,4 +1,4 @@
-import items
+from items import Item
 import random
 
 class Armor(Item):
