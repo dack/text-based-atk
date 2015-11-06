@@ -1,8 +1,9 @@
-import items, weapon, armor, consumable
+import items, weapon, armor
+import world
 
 class Player():
     def __init__(self):
-        self.inventory = [items.Peeler()]
+        self.inventory = [weapon.Peeler()]
         self.hp = 100
         self.location_x, self.location_y = world.starting_position
         self.victory = False
@@ -11,8 +12,9 @@ class Player():
             if isinstance(x, items.Armor):
                 if x.health > self.hp:
                     self.hp = x.health
-                    best_armor = i
-        self.hp += best_armor.health
+                    best_armor = x
+        if best_armor is not None:
+            self.hp += best_armor.health
 
     def is_alive(self):
         return self.hp > 0
@@ -24,7 +26,8 @@ class Player():
 
     def print_inventory(self):
         for item in self.inventory:
-            print(item, '\n')
+            print('\n')
+            print(item)
 
     def move(self, dx, dy):
         self.location_x += dx

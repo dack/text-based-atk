@@ -24,44 +24,45 @@ class Enemy:
 
 class CrinkleCookie(Enemy):
     def __init__(self):
-        super().__init__(name="{} {} Crinkle Cookie Behemoth".format(self.is_gf, self.is_sf),
+        Enemy.__init__(self, name="{} {} Crinkle Cookie Behemoth".format(self.is_gf, self.is_sf),
                          hp=5000,
                          damage=10,
                          critChance=.3)
 class BananaBread(Enemy):
     def __init__(self):
-        super().__init__(name="{} {} Banana Bread Berserker".format(self.is_gf, self.is_sf),
+        Enemy.__init__(self, name="{} {} Banana Bread Berserker".format(self.is_gf, self.is_sf),
                          hp=1000,
                          damage=5,
                          critChance=.5)
 class Turkey(Enemy):
     def __init__(self):
-        super().__init__(name="{} {} Infernal Heritage Turkey".format(self.is_gf, self.is_sf),
+        Enemy.__init__(self, name="{} {} Infernal Heritage Turkey".format(self.is_gf, self.is_sf),
                          hp=3000,
                          damage=4,
                          critChance=.2)
 class Yogurt(Enemy):
     def __init__(self):
-        super().__init__(name="{} {} Yogurt Brute".format(self.is_gf, self.is_sf),
+        Enemy.__init__(self, name="{} {} Yogurt Brute".format(self.is_gf, self.is_sf),
                          hp=700,
                          damage=3,
                          critChance=.1)
 class Jam(Enemy):
-    jamFlavors = ["Rasberry", "Cherry", "Gooseberry", "Indiscriminate", "Strange", "Old", "Blueberry", "Rhubarb", "Orange", "Strawberry"]
     def __init__(self):
-        super().__init__(name="{} {} {} Chu Jam".format(self.is_gf, self.is_sf, jamFlavors(random.randint(0, len(jamFlavors)-1))),
+        jamFlavors = ["Rasberry", "Cherry", "Gooseberry", "Indiscriminate", "Strange", "Old", "Blueberry", "Rhubarb", "Orange", "Strawberry"]
+        num = random.randint(0, len(jamFlavors)-1)
+        Enemy.__init__(self, name="{} {} {} Chu Jam".format(self.is_gf, self.is_sf, jamFlavors[num]),
                          hp=500,
                          damage=3,
                          critChance=.1)
 class Cornbread(Enemy):
     def __init__(self):
-        super().__init__(name="{} {} Cornbread Fiend".format(self.is_gf, self.is_sf),
+        Enemy.__init__(self, name="{} {} Cornbread Fiend".format(self.is_gf, self.is_sf),
                          hp=300,
                          damage=5,
                          critChance=.1)
 class Coleslaw(Enemy):
     def __init__(self):
-        super().__init__(name="{} {} Coleslaw Vermin".format(self.is_gf, self.is_sf),
+        Enemy.__init__(self, name="{} {} Coleslaw Vermin".format(self.is_gf, self.is_sf),
                          hp=100,
                          damage=1,
                          critChance=.05)
