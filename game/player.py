@@ -1,5 +1,6 @@
 import items, weapon, armor
 import world
+import random
 
 class Player():
     def __init__(self):
@@ -54,8 +55,9 @@ class Player():
                 if i.damage > max_dmg:
                     max_dmg = i.damage
                     best_weapon = i
-        print("You use {} against {}!".format(best_weapon.name, enemy.name))
-        enemy.hp -= best_weapon.damage
+
+        print("You use your best weapon against {}!".format(enemy.name))
+        enemy.hp -= best_weapon.weapon().damage
         if not enemy.is_alive():
             print("You killed {}!".format(enemy.name))
         else:
